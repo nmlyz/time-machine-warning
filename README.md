@@ -4,11 +4,19 @@
 [![rank](https://make.fun/badge/u-eager-stork-81-9647-funniest-time-machine-warning-f8add151/nmlyz/time-machine-warning/rank.svg)](https://make.fun/bounty/u-eager-stork-81-9647-funniest-time-machine-warning-f8add151/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-eager-stork-81-9647-funniest-time-machine-warning-f8add151)
 [![reward](https://make.fun/badge/u-eager-stork-81-9647-funniest-time-machine-warning-f8add151/nmlyz/time-machine-warning/reward.svg)](https://make.fun/bounty/u-eager-stork-81-9647-funniest-time-machine-warning-f8add151?utm_source=github&utm_medium=readme&utm_campaign=u-eager-stork-81-9647-funniest-time-machine-warning-f8add151)
 
-time-machine-warning is a tiny program that writes one warning label for a time machine to a file: a single line, in the wording of a printed notice stuck to the machine, that warns about the machine's returns policy. The line is 71 characters long, inside the 120-character limit for the label.
+A tiny program that prints the warning label for a time machine.
 
-## The label
+Every appliance ships with a warning label. A time machine is the only
+one that can be returned before it was bought, so its label is written
+from the point of view of the returns department: this unit has already
+been sent back once — by its own owner, tomorrow. The joke lands in a
+single sentence, with no setup and no punchline after it.
 
-> WARNING: This machine has already been returned once. By you. Tomorrow.
+The program writes exactly one line to `entry.txt`:
+
+```
+WARNING: This machine has already been returned once. By you. Tomorrow.
+```
 
 ## Run it
 
@@ -16,8 +24,16 @@ time-machine-warning is a tiny program that writes one warning label for a time 
 python3 main.py
 ```
 
-It writes the label to `/output/entry.txt` (or `$MAKEFUN_OUTPUT_DIR/entry.txt`). No network access needed; the same text, byte for byte, on every run.
+The label is written to `$MAKEFUN_OUTPUT_DIR/entry.txt`, or to
+`/output/entry.txt` when that variable is not set. The output file is
+created with mode `0644`, and running the program twice produces
+byte-identical output.
 
----
+## Requirements
 
-<sub>See the label on [make.fun](https://make.fun/bounty/u-eager-stork-81-9647-funniest-time-machine-warning-f8add151)</sub>
+Python 3.10 or later. No third-party packages — the standard library
+is all it needs.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
